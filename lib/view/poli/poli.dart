@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../../controller/poli_controller.dart';
+import 'add_poli.dart';
 
 class Poli extends StatefulWidget {
   const Poli({super.key});
@@ -116,11 +117,11 @@ class _PoliState extends State<Poli> {
           )),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Navigator.push(
-          //     context,
-          //     MaterialPageRoute(
-          //       builder: (context) => const AddPoli(),
-          //     ));
+          Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const AddPoli(),
+              ));
         },
         child: const Icon(Icons.add),
       ),
