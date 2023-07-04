@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import '../../controller/poli_controller.dart';
 import 'add_poli.dart';
+import 'edit_poli.dart';
 
 class Poli extends StatefulWidget {
   const Poli({super.key});
@@ -82,16 +83,16 @@ class _PoliState extends State<Poli> {
                                       IconButton(
                                         icon: const Icon(Icons.edit),
                                         onPressed: () {
-                                          // Navigator.push(
-                                          //   context,
-                                          //   MaterialPageRoute(
-                                          //     builder: (context) => EditPoli(
-                                          //       id: data[index]['id'],
-                                          //       poliname: data[index]
-                                          //           ['poliname'],
-                                          //     ),
-                                          //   ),
-                                          // );
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => EditPoli(
+                                                id: data[index]['id'],
+                                                poliname: data[index]
+                                                    ['poliname'],
+                                              ),
+                                            ),
+                                          );
                                         },
                                       ),
                                       IconButton(
