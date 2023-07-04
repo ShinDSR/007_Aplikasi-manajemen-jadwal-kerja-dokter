@@ -3,6 +3,8 @@ import 'package:jadwal_piket_dokter/view/log/register.dart';
 
 import '../../controller/user_controller.dart';
 import '../../model/user_model.dart';
+import '../home/home_admin.dart';
+import '../home/home_user.dart';
 
 class Login extends StatefulWidget {
   const Login({super.key});
@@ -129,21 +131,21 @@ class _LoginState extends State<Login> {
                                   password!,
                                 );
                                 if (user != null) {
-                                  // if (user.role == 'admin') {
-                                  //   Navigator.pushReplacement(
-                                  //     context,
-                                  //     MaterialPageRoute(
-                                  //       builder: (context) => const HomeAdmin(),
-                                  //     ),
-                                  //   );
-                                  // }else{
-                                  //   Navigator.pushReplacement(
-                                  //     context,
-                                  //     MaterialPageRoute(
-                                  //       builder: (context) => const HomeUser(),
-                                  //     ),
-                                  //   );
-                                  // }
+                                  if (user.role == 'admin') {
+                                    Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const HomeAdmin(),
+                                      ),
+                                    );
+                                  }else{
+                                    Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const HomeUser(),
+                                      ),
+                                    );
+                                  }
                                   ScaffoldMessenger.of(context).showSnackBar(
                                     SnackBar(
                                       content:
