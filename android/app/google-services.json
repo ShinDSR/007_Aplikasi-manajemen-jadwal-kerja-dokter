@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "632541865949",
+    "project_id": "jadwal-piket-dokter",
+    "storage_bucket": "jadwal-piket-dokter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632541865949:android:31ea9f7452ced5c602f834",
+        "android_client_info": {
+          "package_name": "com.example.jadwal_piket_dokter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "632541865949-pd1uof0fa8fq2u8k5ffq3c0hf1145hsj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2bwXNISLmt5isWH5i9GUgqC64_0j6pYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "632541865949-pd1uof0fa8fq2u8k5ffq3c0hf1145hsj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:632541865949:android:bfaadddf766a432602f834",
+        "android_client_info": {
+          "package_name": "com.example.test_uas1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "632541865949-pd1uof0fa8fq2u8k5ffq3c0hf1145hsj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD2bwXNISLmt5isWH5i9GUgqC64_0j6pYY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "632541865949-pd1uof0fa8fq2u8k5ffq3c0hf1145hsj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
