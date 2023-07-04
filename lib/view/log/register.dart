@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jadwal_piket_dokter/view/log/login.dart';
 
 import '../../controller/user_controller.dart';
 import '../../model/user_model.dart';
@@ -224,12 +225,12 @@ class _RegisterState extends State<Register> {
                                   actions: [
                                     TextButton(
                                       onPressed: () {
-                                        // Navigator.pushReplacement(
-                                        //   context,
-                                        //   MaterialPageRoute(
-                                        //     builder: (context) => const Login(),
-                                        //   ),
-                                        // );
+                                        Navigator.pushReplacement(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (context) => const Login(),
+                                          ),
+                                        );
                                       },
                                       child: const Text('OK'),
                                     ),
@@ -284,12 +285,12 @@ class _RegisterState extends State<Register> {
                         ),
                         TextButton(
                           onPressed: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //     builder: (context) => const Login(),
-                            //   ),
-                            // );
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const Login(),
+                              ),
+                            );
                           },
                           child: const Text(
                             'Login',
