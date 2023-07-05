@@ -82,7 +82,19 @@ class _UserForAdminState extends State<UserForAdmin> {
                                   trailing: IconButton(
                                     icon: const Icon(Icons.delete),
                                     onPressed: () {
-                                      //
+                                      if (data[index]['role'] ==
+                                          'admin') {
+                                        ScaffoldMessenger.of(context)
+                                            .showSnackBar(const SnackBar(
+                                          content: Text(
+                                              'Admin tidak bisa dihapus'),
+                                        ));
+                                        return;
+                                      }
+                                      else{
+                                        ufac.deleteUser(data[index].id);
+                                      }
+                                      ufac.getUser();
                                     },
                                   )
                                 ),
