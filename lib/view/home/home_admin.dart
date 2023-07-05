@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../controller/user_controller.dart';
 import '../log/login.dart';
+import '../poli/poli.dart';
+import '../user/user_for_admin.dart';
 
 class HomeAdmin extends StatefulWidget {
   const HomeAdmin({super.key});
@@ -13,7 +15,7 @@ class HomeAdmin extends StatefulWidget {
 class _HomeAdminState extends State<HomeAdmin> {
   final form = GlobalKey<FormState>();
   var auth = UserController();
-  
+
   @override
   void initState() {
     auth.getCurrentUser();
@@ -42,12 +44,8 @@ class _HomeAdminState extends State<HomeAdmin> {
                     content: const Text('Apakah anda yakin ingin logout?'),
                     actions: [
                       TextButton(
-                        onPressed: () => Navigator.pushReplacement(
-                          context, 
-                          MaterialPageRoute(
-                            builder: (context) => Login()
-                          )
-                        ),
+                        onPressed: () => Navigator.pushReplacement(context,
+                            MaterialPageRoute(builder: (context) => Login())),
                         child: Text('Ya'.toUpperCase()),
                       ),
                       TextButton(
@@ -74,7 +72,64 @@ class _HomeAdminState extends State<HomeAdmin> {
             ],
           ),
         ),
-        
+        child: SafeArea(
+            child: Padding(
+          padding: EdgeInsets.all(10),
+          child: Form(
+            key: form,
+            child: Column(children: [
+              const SizedBox(height: 30),
+              Row(
+                children: [
+                  const SizedBox(width: 5),
+                  ElevatedButton(
+                      child: const Text(
+                        'Data Poli',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.grey,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 50, vertical: 40),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(color: Colors.redAccent)),
+                      ),
+                      onPressed: () {
+                        Navigator.push(context,
+                            MaterialPageRoute(builder: (context) => Poli()));
+                      }),
+                  const SizedBox(width: 10),
+                  ElevatedButton(
+                      child: const Text(
+                        'Data User',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.grey,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 50, vertical: 40),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(color: Colors.redAccent)),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => UserForAdmin()));
+                      })
+                ],
+              ),
+            ]),
+          ),
+        )),
       ),
     );
   }
