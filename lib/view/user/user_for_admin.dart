@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:jadwal_piket_dokter/view/user/user_detail.dart';
 
 import '../../controller/user_controller.dart';
+import '../../model/user_model.dart';
 
 class UserForAdmin extends StatefulWidget {
   const UserForAdmin({super.key});
@@ -61,7 +63,15 @@ class _UserForAdminState extends State<UserForAdmin> {
                           padding: const EdgeInsets.all(8.0),
                           child: InkWell(
                             onTap: () {
-                              //                              
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => UserDetail(
+                                    userModel: UserModel.fromMap(data[index].data() as Map<String, dynamic>),
+                                    user:data[index],
+                                  ),
+                                ),
+                              );                              
                             },
                             child: Card(
                               elevation: 8,
@@ -97,7 +107,7 @@ class _UserForAdminState extends State<UserForAdmin> {
                                       ufac.getUser();
                                     },
                                   )
-                                ),
+                                  ),
                             ),
                           ),
                         );
