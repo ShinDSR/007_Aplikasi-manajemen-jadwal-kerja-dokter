@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:jadwal_piket_dokter/view/user/user_for_user.dart';
 
+import '../../controller/user_controller.dart';
 import '../log/login.dart';
 
 class HomeUser extends StatefulWidget {
@@ -11,6 +13,9 @@ class HomeUser extends StatefulWidget {
 
 class _HomeUserState extends State<HomeUser> {
   final form = GlobalKey<FormState>();
+  var auth = UserController();
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -62,6 +67,64 @@ class _HomeUserState extends State<HomeUser> {
             ],
           ),
         ),
+        child: SafeArea(
+            child: Padding(
+          padding: EdgeInsets.all(10),
+          child: Form(
+            key: form,
+            child: Column(children: [
+              const SizedBox(height: 30),
+              Row(
+                children: [
+                  const SizedBox(width: 5),
+                  ElevatedButton(
+                      child: const Text(
+                        'Jadwal Masuk',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.grey,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 30, vertical: 40),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(color: Colors.redAccent)),
+                      ),
+                      onPressed: () {
+                        // 
+                      }
+                  ),
+                  const SizedBox(width: 10),
+                  ElevatedButton(
+                      child: const Text(
+                        'Dokter List',
+                        style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.grey,
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: 42, vertical: 40),
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10),
+                            side: BorderSide(color: Colors.redAccent)),
+                      ),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => UserForUser()));
+                      })
+                ],
+              ),
+            ]),
+          ),
+        )),
       ),
     );
   }
