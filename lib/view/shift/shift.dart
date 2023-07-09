@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 
 import '../../controller/shift_controller.dart';
+import 'add_shift.dart';
 
 class Shift extends StatefulWidget {
   const Shift({super.key});
@@ -101,7 +102,12 @@ class _ShiftState extends State<Shift> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          //
+          Navigator.push(
+            context, 
+            MaterialPageRoute(
+              builder: (context) => const AddShift()
+            )
+          );
         },
         child: const Icon(Icons.add),
       ),
