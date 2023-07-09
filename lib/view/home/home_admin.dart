@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jadwal_piket_dokter/view/jadwal/jadwal_home.dart';
 
 import '../../controller/user_controller.dart';
 import '../log/login.dart';
@@ -173,7 +174,10 @@ class _HomeAdminState extends State<HomeAdmin> {
                               side: BorderSide(color: Colors.redAccent)),
                         ),
                         onPressed: () {
-                          
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => JadwalHome()));
                         })
                   ],
                 )
