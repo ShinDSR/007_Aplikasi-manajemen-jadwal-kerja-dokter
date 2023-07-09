@@ -1,7 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:jadwal_piket_dokter/view/shift/shift_detail.dart';
 
 import '../../controller/shift_controller.dart';
+import '../../model/shift_model.dart';
 import 'add_shift.dart';
 
 class Shift extends StatefulWidget {
@@ -62,7 +64,15 @@ class _ShiftState extends State<Shift> {
                             padding: const EdgeInsets.all(8.0),
                             child: InkWell(
                               onTap: () {
-                                //
+                                Navigator.push(
+                                  context, 
+                                  MaterialPageRoute(
+                                    builder: (context) => ShiftDetail(
+                                      shiftModel: ShiftModel.fromMap(data[index].data() as Map<String, dynamic>),
+                                      shift:data[index],
+                                    ),
+                                  )
+                                );
                               },
                               child: Card(
                                 elevation: 8,
