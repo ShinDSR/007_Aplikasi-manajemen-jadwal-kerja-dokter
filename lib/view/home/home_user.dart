@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jadwal_piket_dokter/view/jadwal/jadwal_home_user.dart';
 import 'package:jadwal_piket_dokter/view/user/user_for_user.dart';
 
 import '../../controller/user_controller.dart';
@@ -94,7 +95,10 @@ class _HomeUserState extends State<HomeUser> {
                             side: BorderSide(color: Colors.redAccent)),
                       ),
                       onPressed: () {
-                        // 
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => JadwalHomeUser()));
                       }
                   ),
                   const SizedBox(width: 10),
