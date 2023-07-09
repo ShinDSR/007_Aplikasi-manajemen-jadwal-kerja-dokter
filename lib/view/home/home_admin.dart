@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../controller/user_controller.dart';
 import '../log/login.dart';
 import '../poli/poli.dart';
+import '../shift/shift.dart';
 import '../user/user_for_admin.dart';
 
 class HomeAdmin extends StatefulWidget {
@@ -126,9 +127,56 @@ class _HomeAdminState extends State<HomeAdmin> {
                             context,
                             MaterialPageRoute(
                                 builder: (context) => UserForAdmin()));
-                      })
+                      }
+                    )
                 ],
               ),
+              const SizedBox(height: 20),
+                Row(
+                  children: [
+                    const SizedBox(width: 5),
+                    ElevatedButton(
+                        child: const Text(
+                          'Data Shift',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.grey,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 46, vertical: 40),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              side: BorderSide(color: Colors.redAccent)),
+                        ),
+                        onPressed: () {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => Shift()));
+                        }),
+                    const SizedBox(width: 10),
+                    ElevatedButton(
+                        child: const Text(
+                          'Data Jadwal',
+                          style: TextStyle(
+                              color: Colors.black,
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        style: ElevatedButton.styleFrom(
+                          primary: Colors.grey,
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 39, vertical: 40),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              side: BorderSide(color: Colors.redAccent)),
+                        ),
+                        onPressed: () {
+                          
+                        })
+                  ],
+                )
             ]),
           ),
         )),
