@@ -5,6 +5,7 @@ import 'package:jadwal_piket_dokter/view/shift/shift_detail.dart';
 import '../../controller/shift_controller.dart';
 import '../../model/shift_model.dart';
 import 'add_shift.dart';
+import 'edit_shift.dart';
 
 class Shift extends StatefulWidget {
   const Shift({super.key});
@@ -84,7 +85,17 @@ class _ShiftState extends State<Shift> {
                                     children: [
                                       IconButton(
                                         onPressed: () {
-                                          //
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) => EditShift(
+                                                id: data[index].id,
+                                                shiftname: data[index]['shiftname'],
+                                                timein: data[index]['timein'],
+                                                timeout: data[index]['timeout'],
+                                              ),
+                                            ),
+                                          );
                                         },
                                         icon: const Icon(Icons.edit),
                                       ),
